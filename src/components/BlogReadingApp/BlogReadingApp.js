@@ -1,11 +1,3 @@
-import './App.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-
-
-
 import { useState } from "react";
 
 const INITIAL_POSTS = [
@@ -41,23 +33,17 @@ function BlogReadingApp() {
   ));
 
   return (
-    <Container fluid>
-
-      <Col className='blog-titles'> {blogTitles}</Col>
-        {activePost && (
+    <div>
+      <div> {blogTitles}</div>
+      {activePost && (
         <>
-        <Card className='card'>
-          <Card.Body>
-          <Card.Title className='title-card'>{activePost.title}</Card.Title>
-          <Card.Text>{activePost.body}</Card.Text>
-          </Card.Body>
-        </Card>
+          <h2>{activePost.title}</h2>
+          <p>{activePost.body}</p>
         </>
       )}
-    </Container>
+    </div>
   );
 }
   
-
-
-export default BlogReadingApp;
+  export default BlogReadingApp;
+  
